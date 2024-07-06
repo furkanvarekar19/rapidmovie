@@ -1,0 +1,19 @@
+.movies{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.movies_box{
+    height: 400px;
+    text-align: center;
+    width: 25%;
+    border: 1px solid #000;
+    margin-bottom: 35px;
+}
+.movies_box img{
+    height: 200px;
+    width: 50%;
+    
+}
