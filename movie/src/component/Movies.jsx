@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
-// import SearchBar from './SearchBar';
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 function Movies() {
 const [data , setData]= useState([]);
 console.log(data);
+const navigate = useNavigate();
 
 
   async function movie() {
@@ -12,7 +13,7 @@ console.log(data);
 
     const options = {
       method: 'GET',
-    //   url: 'https://movies-api14.p.rapidapi.com/search',
+      // url: 'https://movies-api14.p.rapidapi.com/search',
       params: {
         query: 'breaking bad'
       },
@@ -41,12 +42,13 @@ useEffect(()=>{
         <h1>Movies</h1>
         <div className='movies'>
             {
-                data.map((i,id)=>(
-                    <div className='movies_box' key={id}>
-                        <p>{i.title}</p>
+                data.map((i,index)=>(
+                    <div className='movies_box' key={index} onClick={()=>navigate(`/MovieItem/${index}`)}>
+                   
                         <img src={i.poster_path} alt="img" />
-                        <p> {i.release_date} </p>
-                        <p> Rating:{i.vote_average} </p>
+                        <p>{i.title}</p>
+                        {/* <p> {i.release_date} </p>
+                        <p> Rating:{i.vote_average} </p> */}   
                     </div>
                 ))
             }
