@@ -12,7 +12,7 @@ console.log(data);
 
     const options = {
       method: 'GET',
-      url: 'https://movies-api14.p.rapidapi.com/search',
+    //   url: 'https://movies-api14.p.rapidapi.com/search',
       params: {
         query: 'breaking bad'
       },
@@ -24,7 +24,7 @@ console.log(data);
     
     try {
         const response = await axios.request(options);
-       setData(response.data.contents)
+       setData(response.data.contents);
     } catch (error) {
         console.error(error);
     }
