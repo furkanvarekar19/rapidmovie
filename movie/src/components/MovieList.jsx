@@ -1,6 +1,5 @@
 import axios from "axios"
 import React from 'react'
-// import './Movie.css'
 import { Link } from "react-router-dom";
 
 
@@ -13,11 +12,11 @@ const MovieList = ({movieData}) => {
 
   return(
     <div style={{width:"100%",}}>
-         <div style={{width:"90%", margin:"0 auto",display:"flex", flexWrap:"wrap", gap:"10px"}}>
+         <div className="main-movies">
 
        {
         movieData.map((movieD, index)=>(
-            <div key={index} style={{width:"24%",background:"black",color:"white"} }>
+            <div key={index} className="movie-box">
          <Link to={`/movieitem/${index}`}>
          <div style={{height:"220px"}}>
                 <img style={{width:"100%",width:"100%",height:"100%",objectFit:"fill"}} src={movieD.poster_path} alt="" />
