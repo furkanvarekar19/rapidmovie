@@ -18,7 +18,7 @@ function App() {
 
 const options = {
   method: 'GET',
-  // url: 'https://movies-api14.p.rapidapi.com/search',  
+  url: 'https://movies-api14.p.rapidapi.com/search',  
   params: {
     query: 'breaking bad'
   },  
